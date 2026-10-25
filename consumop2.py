@@ -111,7 +111,7 @@ ax.set_title(f"El día más frío y el más caluroso de cada fecha en {CIUDAD}")
 ax.set_xlabel("Fecha")
 ax.set_ylabel(f"Temperatura ({unidades['temperature_2m_max']})")
 ax.legend(frameon=False)
-fig.savefig("g1_banda_termica.png", dpi=150, bbox_inches="tight")
+fig.savefig("output/g1_banda_termica.png", dpi=150, bbox_inches="tight")
  
  
 # ─── Gráfica 2 · Cuánto llueve y cuántas horas ─────────────────────────
@@ -138,7 +138,7 @@ eje2.plot(mensual.index, mensual["Horas"], color=ROJO, linewidth=2,
           marker="o", markersize=4)
 eje2.set_ylabel("Horas con lluvia", color=ROJO)
 eje2.grid(False)
-fig.savefig("g2_lluvia_y_horas.png", dpi=150, bbox_inches="tight")
+fig.savefig("output/g2_lluvia_y_horas.png", dpi=150, bbox_inches="tight")
  
  
 # ─── Gráfica 3 · Qué tanto cambia la temperatura dentro del día ────────
@@ -148,4 +148,4 @@ sns.boxplot(data=df, x="Mes", y="Amplitud", color=GRIS, ax=ax)
 ax.set_title("En la temporada de secas el día y la noche se parecen menos")
 ax.set_xlabel("Mes")
 ax.set_ylabel(f"Diferencia entre máxima y mínima ({unidades['temperature_2m_max']})")
-fig.savefig("g3_amplitud.png", dpi=150, bbox_inches="tight")
+fig.savefig("output/g3_amplitud.png", dpi=150, bbox_inches="tight")
