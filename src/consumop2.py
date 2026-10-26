@@ -149,3 +149,24 @@ ax.set_title("En la temporada de secas el día y la noche se parecen menos")
 ax.set_xlabel("Mes")
 ax.set_ylabel(f"Diferencia entre máxima y mínima ({unidades['temperature_2m_max']})")
 fig.savefig("output/g3_amplitud.png", dpi=150, bbox_inches="tight")
+
+# ─── Gráfica 4 - Radiación y temperatura ───────────────────────────────
+# Pregunta: ¿qué relación hay entre la radiación solar y la temperatura?
+
+fig, ax = plt.subplots(figsize=(10, 4.5))
+sns.scatterplot(data=df, x="Radiacion", y="TempMax", color=AZUL, alpha=0.5, ax=ax)
+ax.set_title("La radiación solar y la temperatura máxima del día")
+ax.set_xlabel(f"Radiación solar ({unidades['shortwave_radiation_sum']})")
+ax.set_ylabel(f"Temperatura máxima ({unidades['temperature_2m_max']})")
+fig.savefig("output/g4_radiacion_temp.png", dpi=150, bbox_inches="tight")
+
+# ─── Gráfica 5 - Mapa de calor mes por año ──────────────────────────────
+# Pregunta: ¿qué meses son más calurosos y cuáles más fríos?
+pivot = df.pivot_table(index="Anio", columns="Mes", values="TempMedia")
+fig, ax = plt.subplots(figsize=(10, 4.5))
+sns.heatmap(pivot, cmap="YlOrRd", annot=True, fmt=".1f", linewidths=0.5, ax=ax)
+ax.set_title("Temperatura media por mes y año")
+ax.set_xlabel("Mes")
+ax.set_ylabel("Año")
+fig.savefig("output/g5_mapa_calor.png", dpi=150, bbox_inches="tight")
+
