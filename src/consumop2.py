@@ -170,3 +170,9 @@ ax.set_xlabel("Mes")
 ax.set_ylabel("Año")
 fig.savefig("output/g5_mapa_calor.png", dpi=150, bbox_inches="tight")
 
+# streamlit sirve para crear aplicaciones web interactivas de manera sencilla,
+# especialmente para la visualización de datos. Permite a los usuarios
+# interactuar con gráficos, tablas y otros elementos visuales sin necesidad de
+# conocimientos avanzados en desarrollo web.
+
+# Aporta interactividad a las gráficas, permitiendo a los usuarios filtrar datos,
